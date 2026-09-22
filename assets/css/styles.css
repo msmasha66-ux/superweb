@@ -1366,20 +1366,38 @@ body.lb-open { overflow: hidden; }
   /* Узкое окно: две колонки сохраняем, фигура остаётся справа от текста.
      Кегль заголовка уменьшаем, чтобы строки укладывались в колонку. */
   .hero { min-height: 0; padding-bottom: 0; }
+  /* Снимок - вырезка почти квадратная: в узкой колонке он выходил низким и
+     «убегал» вниз. Поэтому тянем его по высоте блока, а лишнее по бокам
+     срезаем рамкой колонки: в кадре остаются голова и плечи. */
   .hero__in {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.78fr);
-    gap: var(--s4); align-items: end;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr);
+    gap: var(--s3); align-items: stretch;
   }
   .hero h1 { font-size: clamp(25px, 3.4vw, 38px); }
   .hero__sub { font-size: 15px; }
   .hero__cta { margin-top: var(--s5); }
   .hero__text { padding-bottom: clamp(16px, 3vw, 44px); }
   .hero__media {
-    --bleed: 0px;
-    width: 100%; max-width: none;
-    margin-inline: 0; margin-right: 0;
+    --bleed: var(--gutter);
+    position: relative; align-self: stretch;
+    width: calc(100% + var(--bleed)); max-width: none;
+    margin-left: 0; margin-right: calc(-1 * var(--bleed));
+    overflow: hidden;
+    /* Рамка обрезает снимок, поэтому растушёвываем уже саму рамку:
+       слева и снизу кадр уходит в фон, среза не видно. */
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 20%),
+      linear-gradient(to bottom, #000 74%, transparent 100%);
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 20%),
+      linear-gradient(to bottom, #000 74%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
   }
-  .hero__photo { width: 100%; }
+  .hero__photo {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    height: 100%; width: auto; max-width: none;
+  }
   /* Силуэты команды на узком экране читаются серыми пятнами - убираем,
      оставляем только фигуру и свечение под ней. */
   .hero__crew { display: none; }
@@ -1436,6 +1454,10 @@ body.lb-open { overflow: hidden; }
   .ask .btn { width: 100%; }
   .grid--3, .grid--4 { grid-template-columns: 1fr; }
   .cases-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s3); }
+  /* Фотогалерея выпускных считается в четвертях: два вертикальных кадра в ряд,
+     горизонтальный - во всю ширину. Без этого правило выше растягивало фото
+     на весь экран и они шли по одному. */
+  .cases-grid--photos { grid-template-columns: repeat(4, 1fr); gap: var(--s3); }
   .footer__top { grid-template-columns: 1fr; }
   .count__unit { min-width: 0; flex: 1; }
   .hero__badge { left: 8px; }
@@ -1450,23 +1472,26 @@ body.lb-open { overflow: hidden; }
 @media (max-width: 560px) {
   .hero__in { grid-template-columns: 1fr; align-items: start; }
   .hero h1 { font-size: clamp(28px, 8vw, 38px); }
-  .hero__media { max-width: 460px; margin-inline: auto; }
+  /* Фигура снова обычной картинкой под текстом, без обрезки по колонке */
+  .hero__media {
+    position: static; overflow: visible;
+    width: 100%; max-width: 460px; margin-inline: auto;
+    -webkit-mask-image: none; mask-image: none;
+  }
+  .hero__photo { position: static; transform: none; height: auto; width: 100%; }
 
-  /* На телефоне горизонтальная прокрутка неудобна: показываем один тариф,
-     выбранный в списке над таблицей */
-  .cmp-picker { display: block; }
-  .cmp { min-width: 0; }
-  .cmp thead th:first-child { min-width: 0; width: auto; }
-  .cmp thead th + th,
-  .cmp td.c,
-  .cmp tfoot td + td { display: none; }
-  .cmp thead th.is-shown,
-  .cmp td.c.is-shown,
-  .cmp tfoot td.is-shown { display: table-cell; }
-  .cmp thead th + th { width: 88px; }
-  .cmp tbody th.lbl { position: static; }
-  .cmp thead th:first-child { position: sticky; top: var(--header-h); left: auto; }
-  .hint-swipe { display: none; }
+  /* На телефоне тарифы листаются вбок, как и на планшете: выпадающий список
+     не нужен, названия строк держим слева, чтобы не терять контекст. */
+  .cmp { min-width: 620px; font-size: 12px; }
+  .cmp thead th { padding: var(--s3); }
+  .cmp thead th:first-child { min-width: 150px; width: 150px; }
+  .cmp thead th + th { width: 94px; }
+  .cmp tbody th.lbl { min-width: 150px; padding: 11px var(--s3); }
+  .cmp td.c { padding: 11px 4px; }
+  .cmp__tname { font-size: 13px; }
+  .cmp__tprice { font-size: 12px; }
+  .cmp tfoot .btn { padding: 9px 8px; font-size: 10px; }
+  .hint-swipe { display: flex; }
 }
 
 /* ---------- Партнёры: бегущая строка ---------- */

@@ -119,13 +119,11 @@
     });
   }
 
+  // Колонки видны всегда: на узком экране таблица листается вбок,
+  // выбор одного тарифа списком больше не используется.
   function syncColumns() {
     if (!cmp) return;
-    if (window.matchMedia('(max-width: 720px)').matches) {
-      applyColumn(picker ? picker.value : '2');
-    } else {
-      $$('[data-col]', cmp).forEach(function (cell) { cell.classList.add('is-shown'); });
-    }
+    $$('[data-col]', cmp).forEach(function (cell) { cell.classList.add('is-shown'); });
   }
 
   if (picker) picker.addEventListener('change', syncColumns);
