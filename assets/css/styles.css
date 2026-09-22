@@ -1370,11 +1370,15 @@ body.lb-open { overflow: hidden; }
   .hero__text { padding-bottom: var(--s5); }
   .hero__media {
     --bleed: 0px;
-    width: 100%; max-width: 340px;
+    width: 100%; max-width: 560px;
     margin-inline: auto; margin-right: auto;
+    margin-top: calc(-1 * clamp(24px, 6vw, 72px));   /* подтягиваем фигуру к тексту */
   }
   .hero__photo { width: 100%; }
-  .hero__fade { height: clamp(64px, 10vw, 120px); }
+  /* Силуэты команды на узком экране читаются серыми пятнами - убираем,
+     оставляем только фигуру и свечение под ней. */
+  .hero__crew { display: none; }
+  .hero__fade { height: clamp(48px, 8vw, 96px); }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stat:nth-child(2) { border-right: 0; }
