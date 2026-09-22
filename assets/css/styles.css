@@ -1360,14 +1360,18 @@ body.lb-open { overflow: hidden; }
 /* --- 21. Адаптив --------------------------------------------------------- */
 
 @media (max-width: 1080px) {
+  /* Узкое окно: сначала заголовок, фото под ним и небольшое - иначе портрет
+     занимает весь первый экран, а текст уезжает под сгиб. */
+  .hero { min-height: 0; padding-bottom: 0; }
   .hero__in { grid-template-columns: 1fr; align-items: start; }
-  .hero__text { padding-bottom: 0; }
+  .hero__text { padding-bottom: var(--s5); }
   .hero__media {
     --bleed: 0px;
-    order: -1; width: 100%; max-width: 420px;
+    width: 100%; max-width: 340px;
     margin-inline: auto; margin-right: auto;
   }
   .hero__photo { width: 100%; }
+  .hero__fade { height: clamp(64px, 10vw, 120px); }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stat:nth-child(2) { border-right: 0; }

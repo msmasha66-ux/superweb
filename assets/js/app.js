@@ -161,7 +161,30 @@
     if (!strip) return;
     var btns = $$('[data-strip]', wrap);
 
+    // Бесконечная лента (.strip--loop): дублируем карточки, и когда прокрутка
+    // доходит до копий, незаметно возвращаем её к оригиналам. Край не виден.
+    var loop = strip.classList.contains('strip--loop');
+    var setW = 0;         // ширина одного набора карточек вместе с зазором
+    var measureSet = null;
+
+    if (loop) {
+      var originals = Array.prototype.slice.call(strip.children);
+      originals.forEach(function (node) {
+        var copy = node.cloneNode(true);
+        copy.setAttribute('data-clone', '1');
+        copy.setAttribute('aria-hidden', 'true');
+        copy.setAttribute('tabindex', '-1');
+        strip.appendChild(copy);
+      });
+      // Меряем ширину набора каждый раз заново: картинки грузятся лениво,
+      // и разметка меняется уже после первой прокрутки.
+      var firstCopy = strip.children[originals.length];
+      var firstItem = originals[0];
+      measureSet = function () { setW = firstCopy.offsetLeft - firstItem.offsetLeft; return setW; };
+    }
+
     function sync() {
+      if (loop) { btns.forEach(function (b) { b.disabled = false; }); return; }
       var max = strip.scrollWidth - strip.clientWidth - 1;
       btns.forEach(function (b) {
         var dir = Number(b.getAttribute('data-strip'));
@@ -169,14 +192,37 @@
       });
     }
 
+    // Перескок делаем только когда прокрутка остановилась: иначе она оборвёт
+    // плавную анимацию стрелок на полпути.
+    var settle = null;
+    function wrapWhenIdle() {
+      if (!loop) return;
+      clearTimeout(settle);
+      settle = setTimeout(function () {
+        var w = measureSet();
+        if (w < strip.clientWidth) return;   // набор уже поместился целиком: листать нечего
+        if (strip.scrollLeft >= w) strip.scrollLeft -= w;
+        else if (strip.scrollLeft <= 0) strip.scrollLeft += w;
+      }, 120);
+    }
+
     btns.forEach(function (b) {
       b.addEventListener('click', function () {
         var dir = Number(b.getAttribute('data-strip'));
+        // В бесконечной ленте перед шагом возвращаемся к оригиналам, если ушли
+        // на копии: позиция визуально та же, но впереди снова целый набор.
+        if (loop && measureSet) {
+          var w = measureSet();
+          if (w >= strip.clientWidth) {
+            if (dir > 0 && strip.scrollLeft >= w) strip.scrollLeft -= w;
+            else if (dir < 0 && strip.scrollLeft <= 0) strip.scrollLeft += w;
+          }
+        }
         strip.scrollBy({ left: dir * strip.clientWidth * 0.8, behavior: 'smooth' });
       });
     });
 
-    strip.addEventListener('scroll', sync, { passive: true });
+    strip.addEventListener('scroll', function () { sync(); wrapWhenIdle(); }, { passive: true });
     window.addEventListener('resize', sync);
     sync();
 
@@ -246,7 +292,8 @@
 
     function lbVisible() {
       return lbItems.filter(function (a) {
-        return !a.classList.contains('is-hidden') && (a.getAttribute('data-lightbox') || '') === lbGroup;
+        return !a.classList.contains('is-hidden') && !a.hasAttribute('data-clone') &&
+               (a.getAttribute('data-lightbox') || '') === lbGroup;
       });
     }
 
@@ -268,6 +315,14 @@
     }
 
     function lbOpen(a) {
+      // Клик по копии из бесконечной ленты открываем как клик по оригиналу
+      if (a.hasAttribute('data-clone')) {
+        var href = a.getAttribute('href');
+        var orig = lbItems.filter(function (x) {
+          return !x.hasAttribute('data-clone') && x.getAttribute('href') === href;
+        })[0];
+        if (orig) a = orig;
+      }
       lbLast = a;
       lbGroup = a.getAttribute('data-lightbox') || '';
       lb.hidden = false;
