@@ -130,27 +130,14 @@
   window.addEventListener('resize', syncColumns);
   syncColumns();
 
-  /* --- 6. Выбранный тариф подставляется в сообщение Марии ---------------- */
+  /* --- 6. Сообщение Марии: без подстановки тарифа ------------------------ */
+  // Раньше в текст добавлялась выбранная строка тарифа; убрано по просьбе -
+  // сообщение уходит одинаковым, что бы человек ни нажал.
   var askLink = $('#askLink');
-
-  function setAskTier(tier) {
-    if (!askLink) return;
-    var base = askLink.getAttribute('data-base');
-    askLink.href = tier
-      ? base + encodeURIComponent('. Интересует тариф «' + tier + '»')
-      : base;
+  if (askLink) {
+    var askBase = askLink.getAttribute('data-base');
+    if (askBase) askLink.href = askBase;
   }
-
-  $$('[data-tier]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      var tier = a.getAttribute('data-tier');
-      try { sessionStorage.setItem('sw_tier', tier); } catch (e) {}
-      setAskTier(tier);
-    });
-  });
-
-  // Если тариф выбирали раньше в этой вкладке — подставляем сразу
-  try { setAskTier(sessionStorage.getItem('sw_tier')); } catch (e) {}
 
   /* --- 6a. Ленты с прокруткой: стрелки и перетаскивание мышью ----------- */
   /* Лент может быть несколько (фото об Антоне, конференции) - у каждой свои кнопки */
