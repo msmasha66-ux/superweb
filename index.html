@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СуперВеб - интенсив по продвижению на маркетплейсах</title>
+<meta name="description" content="Интенсив Антона Ланцова по продвижению на Wildberries и OZON. Новый интенсив в ноябре 2026 года. Пять тарифов: от теории до курирования магазина.">
+<meta name="theme-color" content="#0a0a0b">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="СуперВеб - интенсив по продвижению на маркетплейсах">
+<meta property="og:description" content="Интенсив Антона Ланцова. Новый интенсив в ноябре 2026 года.">
+<meta property="og:locale" content="ru_RU">
+<!-- <meta property="og:image" content="https://superweb.ru/assets/img/og.jpg"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- Ставим класс js до отрисовки: анимации появления включаются только
+     когда JS реально работает. Без него весь контент виден сразу. -->
+<script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Перейти к&nbsp;содержанию</a>
+
+<!-- ====================== ШАПКА ====================== -->
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="logo" href="#top" aria-label="СуперВеб - на главную">
+      <img class="logo__img" src="assets/img/logo.svg" alt="СуперВеб" width="118" height="38">
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#author">Автор</a>
+      <a href="#program">Программа</a>
+      <a href="#tiers">Тарифы</a>
+      <a href="#compare">Сравнение</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="student.html">Проверить сертификат участника</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm" href="#tiers">Выбрать тариф</a>
+
+    <button class="burger" id="burger" type="button"
+            aria-label="Меню" aria-expanded="false" aria-controls="drawer">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" hidden>
+  <a href="#author">Автор</a>
+  <a href="#program">Программа</a>
+  <a href="#tiers">Тарифы</a>
+  <a href="#compare">Сравнение тарифов</a>
+  <a href="#cases">Кейсы</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#conf">Офлайн</a>
+  <a href="#faq">Вопросы</a>
+  <a href="student.html">Проверить сертификат участника</a>
+  <a class="btn btn--primary btn--block" href="#tiers">Выбрать тариф</a>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ====================== ПЕРВЫЙ ЭКРАН ====================== -->
+<section class="hero">
+  <div class="wrap hero__in">
+    <div class="hero__text">
+      <span class="pill"><span class="pill__dot"></span> Новый интенсив в&nbsp;ноябре 2026 года</span>
+
+      <!-- Четыре строки, разбиты по смыслу. Переносы заданы вручную,
+           чтобы заголовок не рассыпался на шесть коротких строк. -->
+      <h1>
+        <span class="line">Интенсив</span>
+        <span class="line">по&nbsp;продвижению</span>
+        <span class="line">на&nbsp;маркетплейсах</span>
+        <span class="line accent">Антона Ланцова</span>
+      </h1>
+
+      <p class="hero__sub">
+        Wildberries и&nbsp;OZON - в&nbsp;одной программе.
+        Разбор рекламных кабинетов, воронка, юнит-экономика и&nbsp;работа
+        с&nbsp;куратором до&nbsp;результата.
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#program">Ознакомиться с&nbsp;программой</a>
+        <a class="btn btn--ghost" href="#tiers">Посмотреть тарифы</a>
+      </div>
+
+
+      <!-- Отсчёт скрыт, пока в app.js не задан точный день старта -->
+      <div class="count" data-count hidden aria-label="До старта интенсива">
+        <div class="count__unit"><div class="count__num" data-cd="d"> - </div><div class="count__lbl">дней</div></div>
+        <div class="count__unit"><div class="count__num" data-cd="h"> - </div><div class="count__lbl">часов</div></div>
+        <div class="count__unit"><div class="count__num" data-cd="m"> - </div><div class="count__lbl">минут</div></div>
+        <div class="count__unit"><div class="count__num" data-cd="s"> - </div><div class="count__lbl">секунд</div></div>
+      </div>
+    </div>
+
+    <div class="hero__media">
+      <!-- Второй план: силуэты команды. Декоративный слой, поэтому aria-hidden.
+           Координаты совпадают с кадром фото (792×700), холст шире на 200 px
+           с каждой стороны, чтобы крайние фигуры уходили за край. -->
+      <svg class="hero__crew" viewBox="0 0 1000 700" aria-hidden="true" focusable="false">
+        <defs>
+          <!-- Свет сверху, как на фото: макушка светлее плеч -->
+          <linearGradient id="crewFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5a5a64"/>
+            <stop offset="0.55" stop-color="#2e2e35"/>
+            <stop offset="1" stop-color="#141417"/>
+          </linearGradient>
+          <linearGradient id="crewFillFar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3e3e47"/>
+            <stop offset="1" stop-color="#121215"/>
+          </linearGradient>
+        </defs>
+
+        <!-- дальний план: две фигуры по краям, каждая со своим ритмом -->
+        <!-- Плечи — купол без вертикальных боков, чтобы не было прямых срезов -->
+        <g class="crew crew--far-l" fill="url(#crewFillFar)">
+          <circle cx="60" cy="352" r="50" stroke="#ff5a00" stroke-opacity="0.22" stroke-width="2"/>
+          <path d="M-80 700 C-80 585 -20 470 60 470 C140 470 200 585 200 700 Z"/>
+        </g>
+        <g class="crew crew--far-r" fill="url(#crewFillFar)">
+          <circle cx="985" cy="345" r="52" stroke="#ff5a00" stroke-opacity="0.22" stroke-width="2"/>
+          <path d="M840 700 C840 580 905 462 985 462 C1065 462 1130 580 1130 700 Z"/>
+        </g>
+
+        <!-- ближний план -->
+        <g class="crew crew--near-l" fill="url(#crewFill)">
+          <circle cx="180" cy="300" r="66" stroke="#ff5a00" stroke-opacity="0.34" stroke-width="2.5"/>
+          <path d="M-30 700 C-30 570 60 442 180 442 C300 442 390 570 390 700 Z"/>
+        </g>
+        <g class="crew crew--near-r" fill="url(#crewFill)">
+          <circle cx="800" cy="282" r="62" stroke="#ff5a00" stroke-opacity="0.34" stroke-width="2.5"/>
+          <path d="M600 700 C600 545 690 418 800 418 C910 418 1000 545 1000 700 Z"/>
+        </g>
+      </svg>
+
+      <img class="hero__photo" src="assets/img/anton.png" alt="Антон Ланцов"
+           width="792" height="700" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+
+  <!-- Нижняя кромка: всё, что в герое, растворяется в фоне страницы -->
+  <div class="hero__fade" aria-hidden="true"></div>
+</section>
+
+<!-- ====================== ЦИФРЫ ====================== -->
+<section class="section--tight">
+  <div class="wrap">
+    <div class="stats reveal">
+      <!-- Карточка канала: подписчики — тоже цифра, поэтому стоит в этом ряду.
+           Аватар — настоящий, с t.me/redman (320×320, жёлтый фон). -->
+      <a class="stat stat--channel" href="https://t.me/redman" target="_blank" rel="noopener">
+        <span class="chan__ava" aria-hidden="true">
+          <img src="assets/img/redman-avatar.jpg" alt="" width="320" height="320" loading="lazy" decoding="async">
+        </span>
+        <span class="chan__body">
+          <b class="chan__name">Рыжий М.</b>
+          <span class="chan__sub">102 772 подписчика · канал о&nbsp;маркетинге на&nbsp;Wildberries</span>
+          <span class="chan__cta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.4 2.9 10.6c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 11.1-7c.5-.3 1-.1.6.2l-9 8.1-.3 4.9c.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.6.2 1.8-.8l3.2-15.2c.3-1.3-.5-1.9-1.6-1.3Z"/></svg>
+            Открыть канал
+          </span>
+        </span>
+      </a>
+
+      <div class="stat">
+        <div class="stat__num">40+ млн ₽</div>
+        <div class="stat__txt">открутил более 40 млн ₽ во&nbsp;внутренней рекламе маркетплейсов</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">1150+</div>
+        <div class="stat__txt">рекламных кабинетов прошло через разбор</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">с&nbsp;2019</div>
+        <div class="stat__txt">года на&nbsp;маркетплейсах: свои магазины, реклама, фулфилмент</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== АВТОР ====================== -->
+<section class="section section--alt" id="author">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Автор интенсива</span>
+      <h2 class="h2">Об <span class="accent">Антоне Ланцове</span></h2>
+    </div>
+
+    <div class="facts reveal">
+        <article class="fact">
+          <!-- Знак Redmarket вместо иконки. Логотип RMAgent добавится сюда же,
+               когда будет файл: assets/img/rmagent.svg -->
+          <div class="fact__ico fact__ico--logo" aria-hidden="true">
+            <img src="assets/img/redmarket.svg" alt="" width="161" height="142" loading="lazy">
+          </div>
+          <div>
+            <h3>Агентство Redmarket</h3>
+            <p>Основатель маркетингового агентства для&nbsp;селлеров по&nbsp;ведению кабинетов на&nbsp;маркетплейсах.</p>
+            <a class="fact__link" href="https://t.me/redmarketteam" target="_blank" rel="noopener">Redmarket <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="fact">
+          <!-- Знак RMAgent с rmagent.ru: тёмный на прозрачном, поэтому
+               инвертирован под тёмную тему (класс inv) -->
+          <div class="fact__ico fact__ico--logo" aria-hidden="true">
+            <img class="inv" src="assets/img/rmagent.png" alt="" width="1024" height="1024" loading="lazy">
+          </div>
+          <div>
+            <h3>Сервис аналитики RMAgent</h3>
+            <p>Основатель RMAgent - сервиса аналитики для&nbsp;маркетплейсов. Доступ к&nbsp;нему входит в&nbsp;тарифы интенсива.</p>
+            <a class="fact__link" href="https://rmagent.ru/" target="_blank" rel="noopener">rmagent.ru <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="fact fact--wordmark">
+          <!-- Логотип BAWAGA (знак + надпись, без подписи «Фулфилмент») в том же
+               слоте, что и Statpad. Из JPG переведён в белый на прозрачном. -->
+          <div class="fact__ico fact__ico--logo fact__ico--wordmark" aria-hidden="true">
+            <img src="assets/img/bawaga-word.png" alt="" width="1280" height="245" loading="lazy">
+          </div>
+          <div>
+            <h3>Фулфилмент BAWAGA</h3>
+            <p>Владелец фулфилмента «BAWAGA» для&nbsp;маркетплейсов.</p>
+            <a class="fact__link" href="https://t.me/bawagaff" target="_blank" rel="noopener">Bawaga <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="fact fact--wordmark">
+          <!-- Логотип Statpad со statpad.ru: чёрная надпись на прозрачном,
+               инвертирована под тёмную тему -->
+          <div class="fact__ico fact__ico--logo fact__ico--wordmark" aria-hidden="true">
+            <img class="inv" src="assets/img/statpad.png" alt="" width="900" height="300" loading="lazy">
+          </div>
+          <div>
+            <h3>Предприниматель</h3>
+            <p>Создатель геомаркетинговой компании Statpad. Лучший молодой предприниматель России в&nbsp;2018 году.</p>
+            <a class="fact__link" href="https://statpad.ru/" target="_blank" rel="noopener">statpad.ru <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="fact">
+          <div class="fact__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+          </div>
+          <div>
+            <h3>Образование</h3>
+            <p>МГТУ им.&nbsp;Н.&nbsp;Э.&nbsp;Баумана<br>РЭУ им.&nbsp;Г.&nbsp;В.&nbsp;Плеханова</p>
+          </div>
+        </article>
+
+        <article class="fact">
+          <div class="fact__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+          </div>
+          <div>
+            <h3>Практика с&nbsp;2019 года</h3>
+            <p>Системно выводит товары с&nbsp;нуля до&nbsp;заказов на&nbsp;500 000 ₽ в&nbsp;день, помогает селлерам и&nbsp;менеджерам работать с&nbsp;продвижением.</p>
+          </div>
+        </article>
+    </div>
+
+    <!-- Лента фотографий: одна строка, листается вправо. Без JS - просто
+         горизонтальная прокрутка, стрелки появляются только со скриптом. -->
+    <div class="strip-wrap reveal">
+      <div class="strip__nav">
+        <button class="strip__btn" type="button" data-strip="-1" aria-label="Предыдущие фото">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <button class="strip__btn" type="button" data-strip="1" aria-label="Следующие фото">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="strip" id="strip" tabindex="0" aria-label="Фотографии Антона Ланцова, листайте вправо">
+        <figure class="strip__item"><img src="assets/img/gallery/n01.jpg" alt="Антон Ланцов на сцене с докладом «Эволюция трафика - методы привлечения покупателей 2026»" width="1200" height="800" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/n07.jpg" alt="Антон Ланцов на конференции Альфа-Банка" width="1200" height="800" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/n04.jpg" alt="Антон Ланцов на CPC Forum Moscow 2026 - доклад о стоимости покупателя" width="1200" height="800" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/n06.jpg" alt="Антон Ланцов на сцене TGCONF" width="1200" height="800" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/n08.jpg" alt="Антон Ланцов на интенсиве для селлеров СберБизнес" width="960" height="1225" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g06.jpg" alt="Антон Ланцов на сцене конференции inSales" width="775" height="517" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g05.jpg" alt="Антон Ланцов с микрофоном" width="801" height="1200" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g07.jpg" alt="Публикация об Антоне Ланцове в новостях Яндекса" width="1184" height="517" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g08.jpg" alt="Статья: Антон Ланцов стал лучшим предпринимателем России" width="352" height="516" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/n09.jpg" alt="Антон Ланцов выступает на MPStats Expo" width="800" height="1200" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/n10.jpg" alt="Антон Ланцов с дипломом спикера MPStats Expo 2024" width="800" height="1200" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g04.jpg" alt="Антон Ланцов выступает на сцене" width="1200" height="800" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g10.jpg" alt="Зал на выступлении Антона Ланцова" width="1200" height="800" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g13.jpg" alt="Выступление Антона Ланцова перед залом" width="1200" height="801" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g11.jpg" alt="Выступление Антона Ланцова перед залом" width="1200" height="801" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g01.jpg" alt="Выступление Антона Ланцова на живой встрече Супервеб" width="772" height="517" loading="lazy" draggable="false"></figure>
+        <figure class="strip__item"><img src="assets/img/gallery/g02.jpg" alt="Антон Ланцов на выступлении, крупный план" width="1200" height="800" loading="lazy" draggable="false"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ПРОГРАММА ====================== -->
+<section class="section" id="program">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Программа</span>
+      <h2 class="h2">Что внутри интенсива</h2>
+      <p class="lede">
+        Пять блоков: теория, практика с&nbsp;куратором, офлайн-встречи, рабочие
+        инструменты и&nbsp;бонусы. Нажмите на&nbsp;блок, чтобы раскрыть его состав.
+        Полное распределение по&nbsp;тарифам - в
+        <a href="#compare" class="accent">таблице сравнения</a>.
+      </p>
+    </div>
+
+    <div class="prog">
+      <details class="acc reveal">
+        <summary>
+          Основная программа онлайн
+          <span class="acc__n">19 блоков</span>
+          <span class="acc__hint" aria-hidden="true"></span>
+          <svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="acc__body">
+          <ul class="plist">
+            <li><span>Установочный созвон: знакомство с&nbsp;куратором, чатом и&nbsp;программой <span class="tag tag--muted">Zoom</span></span></li>
+            <li><span>Установочный эфир: как&nbsp;сделать результат на&nbsp;интенсиве, кейсы прошлых потоков <span class="tag">New</span></span></li>
+            <li><span>Подготовка к&nbsp;продвижению: введение, инструменты, постановка целей</span></li>
+            <li><span>Правила рекламы: фундамент, основные принципы и&nbsp;инструменты</span></li>
+            <li><span>Юнит-экономика: «Юнитка» от&nbsp;команды Антона и&nbsp;калькулятор <span class="tag">New</span></span></li>
+            <li><span>Воронка и&nbsp;методы её&nbsp;улучшения: просмотр → клики → корзина → заказ → отзыв → повторная продажа</span></li>
+            <li><span>Реклама: поиск, рекомендательные полки, принципы управления и&nbsp;лайфхаки <span class="tag">New</span></span></li>
+            <li><span>Эфир «Стратегии продвижения товаров» с&nbsp;Антоном Ланцовым: более 10 стратегий <span class="tag">New</span></span></li>
+            <li><span>Тестирование конверсий на&nbsp;каждом этапе: правила, методики, инструменты <span class="tag">New</span></span></li>
+            <li><span>Ракетная технология продвижения товара 2.0: план, чек-лист, запуск с&nbsp;нуля в&nbsp;2026 году <span class="tag">New</span></span></li>
+            <li><span>Три эфира по&nbsp;вайбкодингу для&nbsp;селлеров и&nbsp;менеджеров <span class="tag">AI</span></span></li>
+            <li><span>Модули по&nbsp;OZON, Avito и&nbsp;Telegram <span class="tag">New</span></span></li>
+            <li><span>Как увеличить продажи прямо сейчас: топ-эксперты и&nbsp;представители сервисов аналитики</span></li>
+            <li><span>Кейсы продвижения от&nbsp;участников прошлых потоков - каждое воскресенье</span></li>
+            <li><span>Еженедельный разбор карточек участников экспертами</span></li>
+          </ul>
+          <p class="acc__note">
+            Состав блока зависит от&nbsp;выбранного тарифа - какие пункты входят в&nbsp;ваш,
+            смотрите в <a href="#compare" class="accent">таблице сравнения</a>.
+          </p>
+        </div>
+      </details>
+      <details class="acc reveal">
+        <summary>
+          Практика онлайн
+          <span class="acc__n">9 форматов</span>
+          <span class="acc__hint" aria-hidden="true"></span>
+          <svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="acc__body">
+          <ul class="plist">
+            <li><span>Эфир «вопрос - ответ» от&nbsp;команды Супервеба, раз в&nbsp;неделю <span class="tag">New</span></span></li>
+            <li><span>Личный разбор от&nbsp;Антона Ланцова <span class="tag tag--muted">Zoom</span></span></li>
+            <li><span>Публичный разбор от&nbsp;Антона Ланцова <span class="tag tag--muted">Zoom</span></span></li>
+            <li><span>Просмотр публичных разборов других участников</span></li>
+            <li><span>Два мастермайнда с&nbsp;Антоном Ланцовым по&nbsp;60 минут <span class="tag">New</span></span></li>
+            <li><span>Трекинг: контроль менеджера на&nbsp;всём интенсиве и&nbsp;еженедельный отчёт селлеру <span class="tag">New</span></span></li>
+            <li><span>Два месяца индивидуальной работы, 8 созвонов - курирование продаж и&nbsp;продвижения <span class="tag">New</span></span></li>
+            <li><span>Чат с&nbsp;куратором с&nbsp;ответами на&nbsp;все вопросы</span></li>
+            <li><span>Созвон с&nbsp;куратором чата раз в&nbsp;неделю <span class="tag tag--muted">Zoom</span></span></li>
+          </ul>
+          <p class="acc__note">
+            Состав блока зависит от&nbsp;выбранного тарифа - какие пункты входят в&nbsp;ваш,
+            смотрите в <a href="#compare" class="accent">таблице сравнения</a>.
+          </p>
+        </div>
+      </details>
+      <details class="acc reveal">
+        <summary>
+          Офлайн в&nbsp;Москве
+          <span class="acc__n">2 события</span>
+          <span class="acc__hint" aria-hidden="true"></span>
+          <svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="acc__body">
+          <ul class="plist">
+            <li><span>СуперВыпускной - весь день, 10:00–21:00, и&nbsp;встреча чатов 16:00–21:00. Приобретается дополнительно, от&nbsp;2 990 до&nbsp;4 990 ₽</span></li>
+            <li><span>Дневной рабочий интенсив в&nbsp;Москве офлайн <span class="tag">New</span></span></li>
+          </ul>
+          <p class="acc__note">
+            Состав блока зависит от&nbsp;выбранного тарифа - какие пункты входят в&nbsp;ваш,
+            смотрите в <a href="#compare" class="accent">таблице сравнения</a>.
+          </p>
+        </div>
+      </details>
+      <details class="acc reveal">
+        <summary>
+          Инструменты
+          <span class="acc__n">8 инструментов</span>
+          <span class="acc__hint" aria-hidden="true"></span>
+          <svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="acc__body">
+          <ul class="plist">
+            <li><span>Лимиты в&nbsp;RMAgent: пакет Light или&nbsp;Standart в&nbsp;зависимости от&nbsp;тарифа <span class="tag">New</span></span></li>
+            <li><span>Бесконечное тестирование CTR - месяц на&nbsp;выбранный артикул <span class="tag">New</span></span></li>
+            <li><span>Автоматизированные таблицы оцифровки «Воронки» и&nbsp;«Склейки» для&nbsp;каждой карточки через API</span></li>
+            <li><span>«Автоджем» - автоматизированная таблица на&nbsp;3 месяца <span class="tag">New</span></span></li>
+            <li><span>«Оцифровка продвижения» - контроль продвижения товара, категории и&nbsp;магазина <span class="tag">New</span></span></li>
+            <li><span>Чек-лист по&nbsp;ракетной технологии <span class="tag">New</span></span></li>
+            <li><span>Файлы спикеров</span></li>
+            <li><span>Доступ к&nbsp;записям интенсива на&nbsp;платформе GetCourse</span></li>
+          </ul>
+          <p class="acc__note">
+            Состав блока зависит от&nbsp;выбранного тарифа - какие пункты входят в&nbsp;ваш,
+            смотрите в <a href="#compare" class="accent">таблице сравнения</a>.
+          </p>
+        </div>
+      </details>
+      <details class="acc reveal">
+        <summary>
+          Бонусы
+          <span class="acc__n">10 бонусов</span>
+          <span class="acc__hint" aria-hidden="true"></span>
+          <svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="acc__body">
+          <ul class="plist">
+            <li><span>Бот для&nbsp;роста лояльности покупателей и&nbsp;сбора отзывов</span></li>
+            <li><span>Публикация топ-кейсов «Супервеб» в&nbsp;канале «Рыжий М.» <span class="tag">New</span></span></li>
+            <li><span>Публикации кейсов успешных менеджеров в&nbsp;канале «Рыжий М.» <span class="tag">New</span></span></li>
+            <li><span>Публикация менеджеров, прошедших интенсив, в&nbsp;закрытом канале вакансий</span></li>
+            <li><span>Приглашения на&nbsp;работу от&nbsp;селлеров по&nbsp;рекомендации <span class="tag">New</span></span></li>
+            <li><span>Бонусы от&nbsp;партнёров: скидки, бесплатные сервисы, промокоды</span></li>
+            <li><span>Скидка 20% на&nbsp;все следующие Супервебы</span></li>
+            <li><span>Доступ в&nbsp;закрытый чат выпускников «Рекламные Гении»</span></li>
+            <li><span>Доступ к&nbsp;чату избранных менеджеров</span></li>
+            <li><span>Сертификат участника Супервеба</span></li>
+          </ul>
+          <p class="acc__note">
+            Набор бонусов зависит от&nbsp;выбранного тарифа - какие входят в&nbsp;ваш,
+            смотрите в <a href="#compare" class="accent">таблице сравнения</a>.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ТАРИФЫ ====================== -->
+<section class="section section--alt" id="tiers">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <h2 class="h2">Выберите свой тариф</h2>
+      <p class="lede">
+        Все тарифы включают основную программу интенсива и&nbsp;обратную связь от
+        кураторов. Если вы&nbsp;менеджер или&nbsp;селлер - рекомендуем «Теория+».
+      </p>
+    </div>
+
+    <!-- Группа: тарифы для одного участника -->
+    <div class="tiers-group">
+      <span class="tiers-group__ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+      </span>
+      <div>
+        <span class="eyebrow">Для одного участника</span>
+        <h3 class="h3">Селлер или&nbsp;менеджер</h3>
+      </div>
+    </div>
+
+    <!-- Три основных тарифа -->
+    <div class="tiers reveal">
+
+      <article class="tier">
+        <h3 class="tier__name">Теория</h3>
+        <p class="tier__desc">Базовая теория и&nbsp;инструменты продвижения на&nbsp;маркетплейсах.</p>
+        <div class="tier__meta">
+          <span class="chip">30 мест</span>
+          <span class="chip">1 участник</span>
+        </div>
+        <ul class="tier__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Базовые эфиры основной программы - 9 из&nbsp;19, без&nbsp;модулей OZON, Avito, Telegram и&nbsp;вайбкодинга</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Чат с&nbsp;куратором и&nbsp;еженедельный созвон</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Разбор карточек - в&nbsp;режиме просмотра</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Записи на&nbsp;GetCourse - 3 месяца со&nbsp;старта</span></li>
+        </ul>
+        <div class="tier__foot">
+          <a class="btn btn--quiet btn--block" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Теория">Узнать стоимость</a>
+        </div>
+      </article>
+
+      <article class="tier tier--best">
+        <span class="tier__flag">Рекомендуем</span>
+        <h3 class="tier__name">Теория+</h3>
+        <p class="tier__desc">Теория плюс модули по&nbsp;OZON, Avito и&nbsp;Telegram, приглашённые эксперты и&nbsp;разборы.</p>
+        <div class="tier__meta">
+          <span class="chip">70 мест</span>
+          <span class="chip">1 участник</span>
+        </div>
+        <ul class="tier__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Полная основная программа - все 19 эфиров</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Модули по&nbsp;OZON, Avito, Telegram и&nbsp;вайбкодингу</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Ракетная технология 2.0 и&nbsp;юнит-экономика</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Публикация кейсов и&nbsp;доступ в&nbsp;чат менеджеров</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Записи на&nbsp;GetCourse - 4 месяца со&nbsp;старта</span></li>
+        </ul>
+        <div class="tier__foot">
+          <a class="btn btn--primary btn--block" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Теория+">Узнать стоимость</a>
+        </div>
+      </article>
+
+      <article class="tier">
+        <h3 class="tier__name">Публичный разбор</h3>
+        <p class="tier__desc">Всё из&nbsp;«Теории+» и&nbsp;публичный разбор вашего артикула с&nbsp;Антоном Ланцовым.</p>
+        <div class="tier__meta">
+          <span class="chip">15 мест</span>
+          <span class="chip">1 участник</span>
+          <span class="chip chip--warn">+ место менеджеру - 45 000 ₽</span>
+        </div>
+        <ul class="tier__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Всё из&nbsp;тарифа «Теория+»</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Публичный разбор артикула с&nbsp;Антоном</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Записи на&nbsp;GetCourse - 4 месяца со&nbsp;старта</span></li>
+        </ul>
+        <div class="tier__foot">
+          <a class="btn btn--quiet btn--block" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Публичный разбор">Узнать стоимость</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Тарифы для команд -->
+    <div class="tiers-group tiers-group--team">
+      <span class="tiers-group__ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2 21c0-3.6 3.1-6 7-6s7 2.4 7 6"/><circle cx="17" cy="9" r="3"/><path d="M17.5 15c2.8.4 4.5 2.6 4.5 5.5"/></svg>
+      </span>
+      <div>
+        <span class="eyebrow">Для двух участников и&nbsp;команды</span>
+        <h3 class="h3">Селлер + менеджер</h3>
+      </div>
+    </div>
+
+    <div class="tiers tiers--team reveal" style="margin-top:0">
+      <article class="tier">
+        <div class="tier__head">
+          <h3 class="tier__name">Бизнес</h3>
+          <!-- Метка «селлер + менеджер»: две фигуры и 1+1 -->
+          <span class="tier__people" title="Два участника: селлер и менеджер">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8" r="3.5"/><path d="M2 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="3"/><path d="M15.5 15.2c.5-.1 1-.2 1.5-.2 3 0 5 2.2 5 5"/></svg>
+            1+1
+          </span>
+        </div>
+        <p class="tier__desc">Для тандема «селлер + менеджер» с&nbsp;трекингом и&nbsp;личным разбором от&nbsp;Антона.</p>
+        <div class="tier__meta">
+          <span class="chip">10 мест</span>
+          <span class="chip">2 участника</span>
+          <span class="chip chip--warn">+ место менеджеру - 45 000 ₽</span>
+        </div>
+        <ul class="tier__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Личный разбор от&nbsp;Антона Ланцова</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Два мастермайнда по&nbsp;60 минут</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Трекинг менеджера и&nbsp;еженедельный отчёт селлеру</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Записи на&nbsp;GetCourse - 5 месяцев со&nbsp;старта</span></li>
+        </ul>
+        <div class="tier__foot">
+          <a class="btn btn--quiet btn--block" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Бизнес">Узнать стоимость</a>
+        </div>
+      </article>
+
+      <article class="tier">
+        <div class="tier__head">
+          <h3 class="tier__name">Премиум</h3>
+          <!-- Метка «3 и более участников»: три фигуры и плюс -->
+          <span class="tier__people" title="Команда: три и более участников">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="14" cy="7" r="3"/><circle cx="19.5" cy="9" r="2.3"/><path d="M1.5 20c0-3.3 2.4-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><path d="M11 15.2c.9-.5 1.9-.7 3-.7 3.1 0 5.5 2.2 5.5 5.5"/><path d="M19 14.6c1.8.3 3.5 1.7 3.5 4.4"/></svg>
+            3+
+          </span>
+        </div>
+        <p class="tier__desc">Для команды: селлер и&nbsp;до&nbsp;пяти человек. Курирование кабинета три месяца после интенсива.</p>
+        <div class="tier__meta">
+          <span class="chip">1 место</span>
+          <span class="chip">команда: 3 и&nbsp;более участников</span>
+        </div>
+        <ul class="tier__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Два месяца индивидуальной работы, 8 созвонов</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Дневной рабочий интенсив в&nbsp;Москве офлайн</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>«Оцифровка продвижения» на&nbsp;4 месяца</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Записи на&nbsp;GetCourse - 6 месяцев со&nbsp;старта</span></li>
+        </ul>
+        <div class="tier__foot">
+          <a class="btn btn--quiet btn--block" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Премиум">Узнать стоимость</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Контакт под тарифами. Сюда же ведут кнопки «Узнать стоимость». -->
+    <div class="ask reveal" id="ask">
+      <div class="ask__ava">
+        <img src="assets/img/maria.jpg" alt="Мария" width="224" height="224" loading="lazy">
+      </div>
+      <div class="ask__body">
+        <h3 class="h3">Не&nbsp;можете выбрать подходящий тариф? Хотите обсудить партнёрство?<br>У&nbsp;вас есть другой вопрос?</h3>
+        <p>Напишите Марии, она&nbsp;поможет выбрать тариф и&nbsp;расскажет об&nbsp;условиях сотрудничества.</p>
+      </div>
+      <a class="btn btn--primary" id="askLink" href="https://t.me/redassist?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%83%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%A1%D1%83%D0%BF%D0%B5%D1%80%D0%92%D0%B5%D0%B1%D1%83" data-base="https://t.me/redassist?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%83%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%A1%D1%83%D0%BF%D0%B5%D1%80%D0%92%D0%B5%D0%B1%D1%83" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.4 2.9 10.6c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 11.1-7c.5-.3 1-.1.6.2l-9 8.1-.3 4.9c.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.6.2 1.8-.8l3.2-15.2c.3-1.3-.5-1.9-1.6-1.3Z"/></svg>
+        Задать вопрос
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== СРАВНЕНИЕ ====================== -->
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Детально</span>
+      <h2 class="h2">Подробное сравнение тарифов</h2>
+      <p class="lede">
+        48 позиций в&nbsp;пяти блоках. Включите «только отличия», чтобы убрать
+        строки, одинаковые для&nbsp;всех тарифов, - останется 30.
+      </p>
+    </div>
+
+    <div class="cmp-tools">
+      <label class="toggle">
+        <input type="checkbox" id="onlyDiff">
+        <span class="toggle__box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        </span>
+        <span>Показать только отличия</span>
+      </label>
+
+      <div class="cmp-picker">
+        <label class="vh" for="tierPick">Тариф для&nbsp;сравнения</label>
+        <select id="tierPick">
+          <option value="1">Теория</option>
+          <option value="2" selected>Теория+</option>
+          <option value="3">Публичный разбор</option>
+          <option value="4">Бизнес</option>
+          <option value="5">Премиум</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="hint-swipe">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      Таблицу можно прокручивать по&nbsp;горизонтали
+    </p>
+
+    <div class="cmp-scroll">
+      <table class="cmp" id="cmp">
+        <caption class="vh">Сравнение состава тарифов интенсива «СуперВеб»</caption>
+        <thead>
+          <tr>
+            <th scope="col">Что входит в&nbsp;тариф</th>
+            <th scope="col" data-col="1" class="is-shown">
+              <span class="cmp__tname">Теория</span>
+              <span class="cmp__who" title="1 участник"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg><span class="vh">1 участник</span></span>
+            </th>
+            <th scope="col" data-col="2" class="is-best is-shown">
+              <span class="cmp__tname">Теория+</span>
+              <span class="cmp__who" title="1 участник"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg><span class="vh">1 участник</span></span>
+            </th>
+            <th scope="col" data-col="3" class="is-shown">
+              <span class="cmp__tname">Публичный разбор</span>
+              <span class="cmp__who" title="1 участник"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg><span class="vh">1 участник</span></span>
+            </th>
+            <th scope="col" data-col="4" class="is-shown">
+              <span class="cmp__tname">Бизнес</span>
+              <span class="cmp__who" title="селлер + менеджер"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8" r="3.5"/><path d="M2 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="3"/><path d="M15.5 15.2c.5-.1 1-.2 1.5-.2 3 0 5 2.2 5 5"/></svg><span class="vh">селлер + менеджер</span></span>
+            </th>
+            <th scope="col" data-col="5" class="is-shown">
+              <span class="cmp__tname">Премиум</span>
+              <span class="cmp__who" title="команда 3+"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="14" cy="7" r="3"/><circle cx="19.5" cy="9" r="2.3"/><path d="M1.5 20c0-3.3 2.4-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><path d="M11 15.2c.9-.5 1.9-.7 3-.7 3.1 0 5.5 2.2 5.5 5.5"/><path d="M19 14.6c1.8.3 3.5 1.7 3.5 4.4"/></svg><span class="vh">команда 3+</span></span>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td class="grp" colspan="6">Основная программа интенсива онлайн</td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Установочный созвон: знакомство с&nbsp;куратором, чатом и&nbsp;программой <span class="tag tag--muted">Zoom</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Установочный эфир: как&nbsp;сделать результат на&nbsp;интенсиве, кейсы прошлых потоков <span class="tag">New</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Подготовка к&nbsp;продвижению: введение, инструменты и&nbsp;постановка целей</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Модуль по&nbsp;вайбкодингу - 1 эфир <span class="tag">AI</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Правила рекламы: фундамент с&nbsp;основными принципами и&nbsp;инструментами</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Юнит-экономика: «Юнитка» от&nbsp;команды Антона и&nbsp;калькулятор <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Воронка и&nbsp;методы её&nbsp;улучшения: просмотр → клики → корзина → заказ → отзыв</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Модуль по&nbsp;вайбкодингу - 2 эфир <span class="tag">AI</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Реклама: поиск, рекомендательные полки, управление и&nbsp;лайфхаки <span class="tag">New</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Эфир «Стратегии продвижения товаров»: более 10 стратегий <span class="tag">New</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Тестирование конверсий на&nbsp;каждом этапе: правила, методики, инструменты <span class="tag">New</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Модуль по&nbsp;вайбкодингу - 3 эфир <span class="tag">AI</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Ракетная технология продвижения товара 2.0: план, чек-лист, запуск с&nbsp;нуля <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Модуль по&nbsp;OZON <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Как увеличить продажи прямо сейчас: топ-эксперты и&nbsp;сервисы аналитики</th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Кейсы продвижения от&nbsp;участников прошлых потоков, каждое воскресенье</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Еженедельный разбор карточек участников от&nbsp;экспертов</th>
+            <td class="c is-shown" data-col="1">только просмотр</td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Модуль по&nbsp;Avito <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Модуль по&nbsp;Telegram <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr><td class="grp" colspan="6">Практика онлайн</td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Эфир «вопрос - ответ» от&nbsp;команды Супервеба, раз в&nbsp;неделю <span class="tag">New</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Личный разбор от&nbsp;Антона Ланцова <span class="tag tag--muted">Zoom</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c n is-best is-shown" data-col="2"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="3"><span class="vh">не&nbsp;входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c n is-shown" data-col="5"><span class="vh">не&nbsp;входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Публичный разбор от&nbsp;Антона Ланцова <span class="tag tag--muted">Zoom</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c n is-best is-shown" data-col="2"><span class="vh">не&nbsp;входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c n is-shown" data-col="4"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="5"><span class="vh">не&nbsp;входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Просмотр публичных разборов</th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Два мастермайнда с&nbsp;Антоном Ланцовым по&nbsp;60 минут <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c n is-best is-shown" data-col="2"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="3"><span class="vh">не&nbsp;входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Трекинг: контроль менеджера и&nbsp;еженедельный отчёт селлеру <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c n is-best is-shown" data-col="2"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="3"><span class="vh">не&nbsp;входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Два месяца индивидуальной работы, 8 созвонов <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c n is-best is-shown" data-col="2"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="3"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="4"><span class="vh">не&nbsp;входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Чат с&nbsp;куратором с&nbsp;ответами на&nbsp;все вопросы</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Созвон с&nbsp;куратором чата раз в&nbsp;неделю <span class="tag tag--muted">Zoom</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr><td class="grp" colspan="6">Офлайн</td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">СуперВыпускной в&nbsp;Москве 10:00–21:00 и&nbsp;встреча чатов 16:00–21:00 <sup>*</sup></th>
+            <td class="c is-shown" data-col="1">+ доп.</td><td class="c is-best is-shown" data-col="2">+ доп.</td><td class="c is-shown" data-col="3">+ доп.</td><td class="c is-shown" data-col="4">+ доп.</td><td class="c is-shown" data-col="5">+ доп.</td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Дневной рабочий интенсив в&nbsp;Москве офлайн <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c n is-best is-shown" data-col="2"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="3"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="4"><span class="vh">не&nbsp;входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr><td class="grp" colspan="6">Инструменты</td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Лимиты в&nbsp;RMAgent <span class="tag">New</span></th>
+            <td class="c is-shown" data-col="1">Light</td><td class="c is-best is-shown" data-col="2">Standart</td><td class="c is-shown" data-col="3">Standart</td><td class="c is-shown" data-col="4">Standart</td><td class="c is-shown" data-col="5">Standart</td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Бесконечное тестирование CTR - месяц на&nbsp;выбранный артикул <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Автоматизированные таблицы «Воронки» и&nbsp;«Склейки» через API <span class="tag">New</span></th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">«Автоджем» - автоматизированная таблица на&nbsp;3 месяца <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">«Оцифровка продвижения»: контроль товара, категории и&nbsp;магазина <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c is-best is-shown" data-col="2">3 мес.</td><td class="c is-shown" data-col="3">3 мес.</td><td class="c is-shown" data-col="4">4 мес.</td><td class="c is-shown" data-col="5">4 мес.</td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Чек-лист по&nbsp;ракетной технологии <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Файлы спикеров</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Доступ к&nbsp;записям на&nbsp;GetCourse, считая от&nbsp;старта потока</th>
+            <td class="c is-shown" data-col="1">3 мес.</td><td class="c is-best is-shown" data-col="2">4 мес.</td><td class="c is-shown" data-col="3">4 мес.</td><td class="c is-shown" data-col="4">5 мес.</td><td class="c is-shown" data-col="5">6 мес.</td></tr>
+
+          <tr><td class="grp" colspan="6">Бонусы</td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Бот для&nbsp;роста лояльности покупателей и&nbsp;сбора отзывов</th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c n is-best is-shown" data-col="2"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="3"><span class="vh">не&nbsp;входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Публикация топ-кейсов «Супервеб» в&nbsp;канале «Рыжий М.» <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Публикации кейсов успешных менеджеров в&nbsp;канале «Рыжий М.» <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c n is-shown" data-col="4"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="5"><span class="vh">не&nbsp;входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Публикация менеджеров в&nbsp;закрытом канале вакансий</th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c n is-shown" data-col="4"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="5"><span class="vh">не&nbsp;входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Приглашения на&nbsp;работу от&nbsp;селлеров по&nbsp;рекомендации <span class="tag">New</span></th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c n is-shown" data-col="4"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="5"><span class="vh">не&nbsp;входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Бонусы от&nbsp;партнёров: скидки, бесплатные сервисы, промокоды</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Скидка 20% на&nbsp;все следующие Супервебы</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Доступ в&nbsp;закрытый чат выпускников «Рекламные Гении»</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+
+          <tr class="row"><th scope="row" class="lbl">Доступ к&nbsp;чату избранных менеджеров</th>
+            <td class="c n is-shown" data-col="1"><span class="vh">не&nbsp;входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c n is-shown" data-col="4"><span class="vh">не&nbsp;входит</span></td><td class="c n is-shown" data-col="5"><span class="vh">не&nbsp;входит</span></td></tr>
+
+          <tr class="row is-same"><th scope="row" class="lbl">Сертификат участника Супервеба</th>
+            <td class="c y is-shown" data-col="1"><span class="vh">входит</span></td><td class="c y is-best is-shown" data-col="2"><span class="vh">входит</span></td><td class="c y is-shown" data-col="3"><span class="vh">входит</span></td><td class="c y is-shown" data-col="4"><span class="vh">входит</span></td><td class="c y is-shown" data-col="5"><span class="vh">входит</span></td></tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td>Выберите свой тариф</td>
+            <td class="is-shown" data-col="1"><a class="btn btn--quiet btn--sm" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Теория">Узнать стоимость</a></td>
+            <td class="is-shown" data-col="2"><a class="btn btn--primary btn--sm" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Теория+">Узнать стоимость</a></td>
+            <td class="is-shown" data-col="3"><a class="btn btn--quiet btn--sm" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Публичный разбор">Узнать стоимость</a></td>
+            <td class="is-shown" data-col="4"><a class="btn btn--quiet btn--sm" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Бизнес">Узнать стоимость</a></td>
+            <td class="is-shown" data-col="5"><a class="btn btn--quiet btn--sm" href="https://t.me/alantsoffbot?start=superweb" target="_blank" rel="noopener" data-tier="Премиум">Узнать стоимость</a></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="cmp-note">
+      <p>* Встреча чатов и&nbsp;СуперВыпускной в&nbsp;Москве - единоразовая покупка двух офлайн-мероприятий, от&nbsp;2 990 до&nbsp;4 990 ₽.</p>
+      <p>** Дополнительное место для&nbsp;менеджера - только доступ к&nbsp;GetCourse; таблицы, оцифровка и&nbsp;сертификат участника не&nbsp;входят. Доступно для&nbsp;тарифов «Публичный разбор» и&nbsp;«Бизнес», стоимость места - 45 000 ₽.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== КЕЙСЫ ====================== -->
+<section class="section section--alt" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Результаты</span>
+      <h2 class="h2">Кейсы участников</h2>
+      <p class="lede">
+        Кейсы: ниша, что&nbsp;делал участник и&nbsp;цифры до&nbsp;и&nbsp;после интенсива.
+        Ниже - кейсы последнего потока, листайте вправо. Остальные потоки на&nbsp;отдельной странице.
+      </p>
+    </div>
+
+    <!-- Кейсы последнего потока лентой; клик - крупно. Полный список на cases.html -->
+    <div class="strip-wrap strip-wrap--tight reveal">
+      <div class="strip__nav strip__nav--label">
+        <span class="chip chip--warn">СуперВеб 15 · 12 кейсов</span>
+        <button class="strip__btn" type="button" data-strip="-1" aria-label="Предыдущие кейсы">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <button class="strip__btn" type="button" data-strip="1" aria-label="Следующие кейсы">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="strip strip--cases" id="casesStrip" tabindex="0" aria-label="Кейсы участников, листайте вправо">
+        <a class="strip__item" href="assets/img/cases/s15-01.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-01.jpg" alt="Кейс СуперВеб 15: Карл Шотт - БАДы" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-02.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-02.jpg" alt="Кейс СуперВеб 15: Александра Соболева - брюки женские" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-03.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-03.jpg" alt="Кейс СуперВеб 15: Иван Шарап - костюмы" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-04.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-04.jpg" alt="Кейс СуперВеб 15: Александр Глущенко - пылесосы автомобильные" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-05.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-05.jpg" alt="Кейс СуперВеб 15: Елена Муратова - кофты" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-06.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-06.jpg" alt="Кейс СуперВеб 15: Светлана Терновская - стулья" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-07.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-07.jpg" alt="Кейс СуперВеб 15: Маргарита Чебану - стельки ортопедические" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-08.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-08.jpg" alt="Кейс СуперВеб 15: Сергей Ларкин - костюмы медицинские" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-09.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-09.jpg" alt="Кейс СуперВеб 15: Мария Герман - пробиотики для животных" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-10.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-10.jpg" alt="Кейс СуперВеб 15: Наталья Сыроватская - подогреватели для бутылочек" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-11.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-11.jpg" alt="Кейс СуперВеб 15: Евгения Суханова - электроника" width="800" height="1068" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/cases/s15-12.jpg" data-lightbox="cases"><img src="assets/img/cases/s15-12.jpg" alt="Кейс СуперВеб 15: Евгения - товары для дома" width="800" height="1068" loading="lazy" draggable="false"></a>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a class="btn btn--ghost" href="cases.html">Смотреть все кейсы</a>
+    </div>
+  </div>
+</section>
+<!-- ====================== ОТЗЫВЫ ====================== -->
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Отзывы</span>
+      <h2 class="h2">Отзывы участников</h2>
+      <p class="lede">Все отзывы реальные, подлинность можно проверить в&nbsp;канале по&nbsp;ссылке. Нажмите на&nbsp;отзыв, чтобы открыть его в&nbsp;Telegram.</p>
+    </div>
+
+    <!-- Скриншоты из канала отзывов (8 штук). Новый отзыв: ещё один <a class="revshot">, файл в assets/img/reviews. -->
+    <div class="revgrid reveal" id="revGrid">
+      <a class="revshot" href="https://t.me/c/1682819279/318" target="_blank" rel="noopener"><img src="assets/img/reviews/r01.jpg" alt="Отзыв участника СуперВеба" width="560" height="337" loading="lazy" decoding="async"></a>
+      <a class="revshot" href="https://t.me/c/1682819279/318" target="_blank" rel="noopener"><img src="assets/img/reviews/r04.jpg" alt="Отзыв участника СуперВеба" width="560" height="363" loading="lazy" decoding="async"></a>
+      <a class="revshot" href="https://t.me/c/1682819279/325" target="_blank" rel="noopener"><img src="assets/img/reviews/r24.jpg" alt="Отзыв участника СуперВеба" width="538" height="425" loading="lazy" decoding="async"></a>
+      <a class="revshot" href="https://t.me/c/1682819279/219" target="_blank" rel="noopener"><img src="assets/img/reviews/r15.jpg" alt="Отзыв участника СуперВеба" width="540" height="384" loading="lazy" decoding="async"></a>
+      <a class="revshot" href="https://t.me/c/1682819279/318" target="_blank" rel="noopener"><img src="assets/img/reviews/r02.jpg" alt="Отзыв участника СуперВеба" width="560" height="241" loading="lazy" decoding="async"></a>
+      <a class="revshot" href="https://t.me/c/1682819279/318" target="_blank" rel="noopener"><img src="assets/img/reviews/r06.jpg" alt="Отзыв участника СуперВеба" width="560" height="391" loading="lazy" decoding="async"></a>
+      <a class="revshot" href="https://t.me/c/1682819279/319" target="_blank" rel="noopener"><img src="assets/img/reviews/r28.jpg" alt="Отзыв участника СуперВеба" width="538" height="462" loading="lazy" decoding="async"></a>
+      <a class="revshot" href="https://t.me/c/1682819279/143" target="_blank" rel="noopener"><img src="assets/img/reviews/r17.jpg" alt="Отзыв участника СуперВеба" width="528" height="444" loading="lazy" decoding="async"></a>
+    </div>
+
+    <div class="revgrid__more">
+      <a class="btn btn--primary" href="https://t.me/+7oBEaLbFJ4s3Y2Iy" target="_blank" rel="noopener">Все отзывы в&nbsp;канале</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ОФЛАЙН ====================== -->
+<section class="section section--alt" id="conf">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Офлайн</span>
+      <h2 class="h2">СуперВеб на&nbsp;конференциях</h2>
+    </div>
+
+    <!-- Слева два вертикальных видео, справа лента фото с прокруткой вправо.
+         Новое фото - ещё один <a class="strip__item"> в конец ленты. -->
+    <div class="strip-wrap strip-wrap--conf reveal">
+      <div class="strip__nav">
+        <button class="strip__btn" type="button" data-strip="-1" aria-label="Предыдущие фото">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <button class="strip__btn" type="button" data-strip="1" aria-label="Следующие фото">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="conf">
+        <div class="conf__videos">
+          <div class="conf__video">
+            <a class="vkposter" href="https://vkvideo.ru/clip-227232761_456239026" data-vk="-227232761,456239026" target="_blank" rel="noopener" aria-label="Смотреть: СуперВеб на конференции - видео 1">
+              <img src="assets/img/vk/clip-456239026.jpg" alt="СуперВеб на конференции - видео 1" width="540" height="960" loading="lazy" decoding="async">
+              <span class="strip__ico" aria-hidden="true">&#9654;</span>
+            </a>
+          </div>
+          <div class="conf__video">
+            <a class="vkposter" href="https://vkvideo.ru/clip-227232761_456239027" data-vk="-227232761,456239027" target="_blank" rel="noopener" aria-label="Смотреть: СуперВеб на конференции - видео 2">
+              <img src="assets/img/vk/clip-456239027.jpg" alt="СуперВеб на конференции - видео 2" width="540" height="960" loading="lazy" decoding="async">
+              <span class="strip__ico" aria-hidden="true">&#9654;</span>
+            </a>
+          </div>
+        </div>
+        <div class="strip strip--conf" tabindex="0" aria-label="Фото с конференций, листайте вправо">
+          <a class="strip__item" href="assets/img/conf/c01.jpg" data-lightbox="conf"><img src="assets/img/conf/c01.jpg" alt="Команда СуперВеб на стенде MarketGuru Conf 2026" width="1400" height="1052" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c04.jpg" data-lightbox="conf"><img src="assets/img/conf/c04.jpg" alt="Фирменные стаканчики СуперВеб на MPStats Conf" width="1400" height="934" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c03.jpg" data-lightbox="conf"><img src="assets/img/conf/c03.jpg" alt="Команда СуперВеб на MPStats Conf" width="1400" height="934" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c05.jpg" data-lightbox="conf"><img src="assets/img/conf/c05.jpg" alt="Мария на стенде СуперВеб, MPStats Conf" width="1400" height="934" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c06.jpg" data-lightbox="conf"><img src="assets/img/conf/c06.jpg" alt="Команда СуперВеб на стенде MPStats Conf" width="934" height="1400" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c07.jpg" data-lightbox="conf"><img src="assets/img/conf/c07.jpg" alt="Антон Ланцов на MPStats Conf" width="934" height="1400" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c14.jpg" data-lightbox="conf"><img src="assets/img/conf/c14.jpg" alt="Команда СуперВеб на конференции" width="960" height="1280" loading="lazy" draggable="false" style="object-position:center 68%"></a>
+          <a class="strip__item" href="assets/img/conf/c02.jpg" data-lightbox="conf"><img src="assets/img/conf/c02.jpg" alt="Команда СуперВеб на стенде MPStats Conf" width="1400" height="934" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c09.jpg" data-lightbox="conf"><img src="assets/img/conf/c09.jpg" alt="Мария с Игорем Манном на MPStats Conf" width="934" height="1400" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c10.jpg" data-lightbox="conf"><img src="assets/img/conf/c10.jpg" alt="Команда СуперВеб на стенде MarketGuru Conf 2026" width="1290" height="840" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c11.jpg" data-lightbox="conf"><img src="assets/img/conf/c11.jpg" alt="Консультации по продвижению на стенде СуперВеб, MarketGuru Conf 2026" width="1290" height="817" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c15.jpg" data-lightbox="conf"><img src="assets/img/conf/c15.jpg" alt="Зал конференции и неон Р+ на стенде СуперВеб" width="1400" height="934" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c17.jpg" data-lightbox="conf"><img src="assets/img/conf/c17.jpg" alt="Команда СуперВеб на стенде MarketGuru Conf 2026" width="990" height="751" loading="lazy" draggable="false"></a>
+          <a class="strip__item" href="assets/img/conf/c18.jpg" data-lightbox="conf"><img src="assets/img/conf/c18.jpg" alt="Фирменный стакан СуперВеб «Выпей и прозрей» на MPStats Conf" width="934" height="1400" loading="lazy" draggable="false" style="object-position:center 55%"></a>
+          <a class="strip__item" href="assets/img/conf/c19.jpg" data-lightbox="conf"><img src="assets/img/conf/c19.jpg" alt="Консультации на стенде СуперВеб, MPStats Conf" width="1400" height="934" loading="lazy" draggable="false"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Лайтбокс для фото - тот же, что на странице кейсов -->
+    <div class="lb" id="lightbox" hidden>
+      <button class="lb__close" type="button" data-lb-close aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <button class="lb__nav lb__nav--prev" type="button" data-lb="-1" aria-label="Предыдущее фото">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+      </button>
+      <img class="lb__img" id="lightboxImg" src="" alt="">
+      <button class="lb__nav lb__nav--next" type="button" data-lb="1" aria-label="Следующее фото">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+      <div class="lb__count" id="lightboxCount"></div>
+    </div>
+  </div>
+</section>
+<!-- ====================== ПАРТНЁРЫ ====================== -->
+<!-- Бегущая строка. Новый партнёр = ещё один <img> внутри .partners__set;
+     второй набор (aria-hidden) дублирует первый и нужен для бесшовной прокрутки. -->
+<section class="partners" aria-label="Партнёры СуперВеба">
+  <div class="wrap">
+    <p class="partners__label">Партнёры СуперВеба</p>
+  <div class="partners__band">
+    <!-- Две строки навстречу друг другу. Новый партнёр = <img> в оба набора одной из строк
+         (второй набор с aria-hidden нужен для бесшовной прокрутки). -->
+    <div class="partners__track">
+      <div class="partners__set">
+        <a href="https://zaboosty.ru" target="_blank" rel="noopener" title="Забусти"><img src="assets/img/partners/zaboosty.svg" style="--h:22px" alt="Забусти" width="2002" height="500" loading="lazy"></a>
+        <a href="https://marketguru.io" target="_blank" rel="noopener" title="MarketGuru"><img src="assets/img/partners/marketguru.png" style="--h:34px" alt="MarketGuru" width="586" height="200" loading="lazy"></a>
+        <a href="https://iglgroup.ru" target="_blank" rel="noopener" title="IGL group"><img src="assets/img/partners/igl.png" style="--h:38px" alt="IGL group" width="352" height="246" loading="lazy"></a>
+        <a href="https://seoremica.com" target="_blank" rel="noopener" title="Seoremica"><img src="assets/img/partners/seoremica.png" style="--h:26px" alt="Seoremica" width="732" height="168" loading="lazy"></a>
+        <a href="https://mpstats.io" target="_blank" rel="noopener" title="mpstats"><img src="assets/img/partners/mpstats.svg" style="--h:18px" alt="mpstats" width="159" height="32" loading="lazy"></a>
+        <a href="https://zhelezno.com" target="_blank" rel="noopener" title="Патентное бюро Железно"><img src="assets/img/partners/zhelezno.png" style="--h:36px" alt="Патентное бюро Железно" width="144" height="58" loading="lazy"></a>
+        <a href="https://packplace.me" target="_blank" rel="noopener" title="Packplace"><img src="assets/img/partners/packplace.svg" style="--h:20px" alt="Packplace" width="200" height="31" loading="lazy"></a>
+        <img src="assets/img/partners/effstep.png" style="--h:34px" alt="EFFSTEP" width="500" height="268" loading="lazy">
+        <a href="https://t.me/WB_inwest" target="_blank" rel="noopener" title="WB Invest"><img src="assets/img/partners/wbinvest.png" style="--h:34px" alt="WB Invest" width="1061" height="300" loading="lazy"></a>
+        <img src="assets/img/partners/dsl.png" style="--h:30px" alt="DSL - Do Simple Logistics" width="193" height="157" loading="lazy">
+        <a href="https://annabaranova.pro" target="_blank" rel="noopener" title="AB.pro - Анна Баранова"><img src="assets/img/partners/annabaranova.svg" style="--h:24px" alt="AB.pro - Анна Баранова" width="95" height="19" loading="lazy"></a>
+        <img src="assets/img/partners/lekomtsev.svg" style="--h:48px" alt="Lekomtsev Finance" width="120" height="120" loading="lazy">
+      </div>
+      <div class="partners__set" aria-hidden="true">
+        <a href="https://zaboosty.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/zaboosty.svg" style="--h:22px" alt="" width="2002" height="500" loading="lazy"></a>
+        <a href="https://marketguru.io" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/marketguru.png" style="--h:34px" alt="" width="586" height="200" loading="lazy"></a>
+        <a href="https://iglgroup.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/igl.png" style="--h:38px" alt="" width="352" height="246" loading="lazy"></a>
+        <a href="https://seoremica.com" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/seoremica.png" style="--h:26px" alt="" width="732" height="168" loading="lazy"></a>
+        <a href="https://mpstats.io" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/mpstats.svg" style="--h:18px" alt="" width="159" height="32" loading="lazy"></a>
+        <a href="https://zhelezno.com" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/zhelezno.png" style="--h:36px" alt="" width="144" height="58" loading="lazy"></a>
+        <a href="https://packplace.me" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/packplace.svg" style="--h:20px" alt="" width="200" height="31" loading="lazy"></a>
+        <img src="assets/img/partners/effstep.png" style="--h:34px" alt="" width="500" height="268" loading="lazy">
+        <a href="https://t.me/WB_inwest" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/wbinvest.png" style="--h:34px" alt="" width="1061" height="300" loading="lazy"></a>
+        <img src="assets/img/partners/dsl.png" style="--h:30px" alt="" width="193" height="157" loading="lazy">
+        <a href="https://annabaranova.pro" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/annabaranova.svg" style="--h:24px" alt="" width="95" height="19" loading="lazy"></a>
+        <img src="assets/img/partners/lekomtsev.svg" style="--h:48px" alt="" width="120" height="120" loading="lazy">
+      </div>
+    </div>
+    <div class="partners__track partners__track--rev">
+      <div class="partners__set">
+        <a href="https://t.me/bawagaff" target="_blank" rel="noopener" title="BAWAGA Фулфилмент"><img src="assets/img/partners/bawaga.jpg" style="--h:30px" alt="BAWAGA Фулфилмент" width="856" height="200" loading="lazy"></a>
+        <a href="https://www.labai.ru" target="_blank" rel="noopener" title="Лаборатория антикризисных исследований"><img src="assets/img/partners/lai.svg" style="--h:34px" alt="Лаборатория антикризисных исследований" width="327" height="49" loading="lazy"></a>
+        <a href="https://onescreen.tech" target="_blank" rel="noopener" title="Onescreen"><img src="assets/img/partners/onescreen.svg" style="--h:32px" alt="Onescreen" width="210" height="80" loading="lazy"></a>
+        <a href="https://www.moysklad.ru" target="_blank" rel="noopener" title="МойСклад"><img src="assets/img/partners/moysklad.svg" style="--h:16px" alt="МойСклад" width="156" height="24" loading="lazy"></a>
+        <a href="https://wildbox.ru" target="_blank" rel="noopener" title="Wildbox"><img src="assets/img/partners/wildbox.svg" style="--h:14px" alt="Wildbox" width="186" height="19" loading="lazy"></a>
+        <a href="https://tkmarketplaces.ru" target="_blank" rel="noopener" title="ТКМ"><img src="assets/img/partners/tkm.png" style="--h:30px" alt="ТКМ" width="534" height="240" loading="lazy"></a>
+        <a href="https://marketiq.ru" target="_blank" rel="noopener" title="Marketiq"><img src="assets/img/partners/marketiq.svg" style="--h:15px" alt="Marketiq" width="260" height="34" loading="lazy"></a>
+        <a href="https://mpsysteam.ru" target="_blank" rel="noopener" title="MPSysTeam"><img src="assets/img/partners/mpsysteam.png" style="--h:18px" alt="MPSysTeam" width="627" height="85" loading="lazy"></a>
+        <img src="assets/img/partners/easylife.png" style="--h:26px" alt="Easy Life Shopping" width="411" height="126" loading="lazy">
+        <a href="https://wildspace.pro" target="_blank" rel="noopener" title="Wild Space"><img src="assets/img/partners/wildspace.png" style="--h:38px" alt="Wild Space" width="183" height="197" loading="lazy"></a>
+        <a href="https://rodinkahr.ru" target="_blank" rel="noopener" title="Rodinka Recruitment"><img src="assets/img/partners/rodinka.svg" style="--h:14px" alt="Rodinka Recruitment" width="207" height="16" loading="lazy"></a>
+        <a href="https://quick24.ru" target="_blank" rel="noopener" title="QUICK"><img src="assets/img/partners/quick.svg" style="--h:18px" alt="QUICK - команда на аутсорсинге" width="178" height="40" loading="lazy"></a>
+      </div>
+      <div class="partners__set" aria-hidden="true">
+        <a href="https://t.me/bawagaff" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/bawaga.jpg" style="--h:30px" alt="" width="856" height="200" loading="lazy"></a>
+        <a href="https://www.labai.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/lai.svg" style="--h:34px" alt="" width="327" height="49" loading="lazy"></a>
+        <a href="https://onescreen.tech" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/onescreen.svg" style="--h:32px" alt="" width="210" height="80" loading="lazy"></a>
+        <a href="https://www.moysklad.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/moysklad.svg" style="--h:16px" alt="" width="156" height="24" loading="lazy"></a>
+        <a href="https://wildbox.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/wildbox.svg" style="--h:14px" alt="" width="186" height="19" loading="lazy"></a>
+        <a href="https://tkmarketplaces.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/tkm.png" style="--h:30px" alt="" width="534" height="240" loading="lazy"></a>
+        <a href="https://marketiq.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/marketiq.svg" style="--h:15px" alt="" width="260" height="34" loading="lazy"></a>
+        <a href="https://mpsysteam.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/mpsysteam.png" style="--h:18px" alt="" width="627" height="85" loading="lazy"></a>
+        <img src="assets/img/partners/easylife.png" style="--h:26px" alt="" width="411" height="126" loading="lazy">
+        <a href="https://wildspace.pro" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/wildspace.png" style="--h:38px" alt="" width="183" height="197" loading="lazy"></a>
+        <a href="https://rodinkahr.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/rodinka.svg" style="--h:14px" alt="" width="207" height="16" loading="lazy"></a>
+        <a href="https://quick24.ru" target="_blank" rel="noopener" tabindex="-1"><img src="assets/img/partners/quick.svg" style="--h:18px" alt="" width="178" height="40" loading="lazy"></a>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- ====================== СУПЕРВЫПУСКНОЙ ====================== -->
+<!-- Новый выпускной = ещё одна кнопка в .ftabs и карточки с data-stream="N".
+     Последний поток ставится первым и получает class="is-active". -->
+<section class="section" id="grad">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">СуперВыпускной</h2>
+      <p class="lede">Каждый поток мы&nbsp;завершаем офлайн-выпускным в&nbsp;Москве. Фото кликабельны: нажмите, чтобы посмотреть крупнее.</p>
+    </div>
+
+    <div class="strip-wrap strip-wrap--tight reveal">
+      <div class="strip__nav strip__nav--label">
+        <span class="chip chip--warn">СуперВыпускной 15.0 · август 2026</span>
+        <button class="strip__btn" type="button" data-strip="-1" aria-label="Предыдущие фото">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <button class="strip__btn" type="button" data-strip="1" aria-label="Следующие фото">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="strip" id="gradGrid" tabindex="0" aria-label="Фото с выпускного, листайте вправо">
+        <a class="strip__item" href="assets/img/grad/full/g14-04.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-04.jpg" alt="Общее фото выпускников 14-го потока СуперВеб" width="1400" height="933" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-03.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-03.jpg" alt="Антон Ланцов вручает сертификат на тариф «Теория+»" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-01.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-01.jpg" alt="Команда СуперВеб на выпускном 14-го потока" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-14.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-14.jpg" alt="Участница выпускного СуперВеб" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-20.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-20.jpg" alt="Разговор участников за столом" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-13.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-13.jpg" alt="Участники выпускного за столом" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-07.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-07.jpg" alt="Папка СуперВеб в руках участника" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-21.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-21.jpg" alt="Выступление на выпускном СуперВеб" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-05.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-05.jpg" alt="Квиз на выпускном: бланк первого раунда" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-19.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-19.jpg" alt="Выпускники СуперВеб у стенда" width="1400" height="933" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-18.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-18.jpg" alt="Гости снимают церемонию на телефоны" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-02.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-02.jpg" alt="Участники выпускного за столом" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-09.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-09.jpg" alt="Участницы выпускного СуперВеб" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-23.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-23.jpg" alt="Участница выпускного у белого рояля" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-08.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-08.jpg" alt="Антон Ланцов и Мария на выпускном СуперВеб" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-47.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-47.jpg" alt="Участница смеётся за столом" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-24.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-24.jpg" alt="Гости выпускного с бокалами" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-25.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-25.jpg" alt="Мерч СуперВеба: футболка, стикеры и шнурок" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-17.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-17.jpg" alt="Участник выпускного за столом" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-33.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-33.jpg" alt="Объявление победителей турнира на сцене" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-39.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-39.jpg" alt="Вручение кубка победителю турнира по CTR" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-10.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-10.jpg" alt="Кубок победителю турнира по CTR" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-26.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-26.jpg" alt="Выступление на сцене СуперВыпускного" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-40.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-40.jpg" alt="Активные участники чатов команд с подарками" width="1400" height="933" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-48.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-48.jpg" alt="Участник слушает выступление" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-41.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-41.jpg" alt="Бейджи и ленты участников на стойке регистрации" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-29.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-29.jpg" alt="Участница на регистрации СуперВыпускного" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-34.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-34.jpg" alt="Спикер выступает на СуперВыпускном" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-27.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-27.jpg" alt="Участники общаются в зале" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-11.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-11.jpg" alt="Выступление на выпускном СуперВеб" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-36.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-36.jpg" alt="Участники выпускного в зале" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-46.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-46.jpg" alt="Участники веселятся за столом" width="934" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-31.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-31.jpg" alt="Сертификат на тариф «Теория+», футболка и бейдж" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-44.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-44.jpg" alt="Участница и Антон Ланцов в фотозоне" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-49.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-49.jpg" alt="Участницы смотрят выступление" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-50.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-50.jpg" alt="Фуршет на СуперВыпускном" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-42.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-42.jpg" alt="Участники в фотозоне СуперВеба" width="933" height="1400" loading="lazy" draggable="false"></a>
+        <a class="strip__item" href="assets/img/grad/full/g14-43.jpg" data-stream="14" data-lightbox="grad"><img src="assets/img/grad/g14-43.jpg" alt="Команда участников у входа" width="1400" height="935" loading="lazy" draggable="false"></a>
+      </div>
+    </div>
+    <div class="sec-sub">
+      <h3 class="h3">Фото и&nbsp;видео с&nbsp;предыдущих событий</h3>
+    </div>
+    <div class="gmedia reveal">
+    <!-- Видео с выпускного (YouTube): миниатюра + ссылка. Клик подгружает плеер на месте.
+         Другое видео: поменять data-yt, href, обложку и подпись. -->
+      <div class="vcard vcard--mini">
+        <a class="vcard__link" href="https://youtu.be/fYtp0SdMlqw" data-yt="fYtp0SdMlqw" target="_blank" rel="noopener" aria-label="Смотреть видео: СуперВыпускной СупервебХ">
+          <img src="assets/img/grad/video-10.jpg" alt="Кадр из видео с СуперВыпускного десятого потока" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="vcard__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        </a>
+        <div class="vcard__text">
+          <span class="eyebrow">Видео</span>
+          <h3>Как проходит СуперВыпускной</h3>
+          <p>Ролик с&nbsp;выпускного десятого потока «СупервебХ».</p>
+          <a class="btn btn--ghost btn--sm" href="https://youtu.be/fYtp0SdMlqw" target="_blank" rel="noopener">Смотреть видео</a>
+        </div>
+      </div>
+      <!-- Короткие ролики с выпускного (VK Клипы, вертикальные). Новый клип: ещё один .conf__video,
+           id из ссылки vkvideo.ru/clip-227232761_NNNNN -->
+      <div class="gmedia__clips" aria-label="Короткие ролики с выпускного">
+        <div class="conf__video">
+          <a class="vkposter" href="https://vkvideo.ru/clip-227232761_456239028" data-vk="-227232761,456239028" target="_blank" rel="noopener" aria-label="Смотреть: СуперВыпускной - клип 1">
+              <img src="assets/img/vk/clip-456239028.jpg" alt="СуперВыпускной - клип 1" width="540" height="960" loading="lazy" decoding="async">
+              <span class="strip__ico" aria-hidden="true">&#9654;</span>
+            </a>
+        </div>
+        <div class="conf__video">
+          <a class="vkposter" href="https://vkvideo.ru/clip-227232761_456239029" data-vk="-227232761,456239029" target="_blank" rel="noopener" aria-label="Смотреть: СуперВыпускной - клип 2">
+              <img src="assets/img/vk/clip-456239029.jpg" alt="СуперВыпускной - клип 2" width="540" height="960" loading="lazy" decoding="async">
+              <span class="strip__ico" aria-hidden="true">&#9654;</span>
+            </a>
+        </div>
+        <div class="conf__video">
+          <a class="vkposter" href="https://vkvideo.ru/clip-227232761_456239030" data-vk="-227232761,456239030" target="_blank" rel="noopener" aria-label="Смотреть: СуперВыпускной - клип 3">
+              <img src="assets/img/vk/clip-456239030.jpg" alt="СуперВыпускной - клип 3" width="540" height="960" loading="lazy" decoding="async">
+              <span class="strip__ico" aria-hidden="true">&#9654;</span>
+            </a>
+        </div>
+      </div>    </div>
+
+    <div class="cta__btns" style="margin-top:40px">
+      <a class="btn btn--ghost" href="grad.html">Смотреть все фото</a>
+      <a class="btn btn--ghost" href="student.html">Проверить сертификат участника</a>
+    </div>
+    <p class="grad__note">Участник? Найдите себя по&nbsp;номеру сертификата или&nbsp;нику в&nbsp;Telegram.</p>
+  </div>
+</section>
+<!-- ====================== FAQ ====================== -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <span class="eyebrow">Вопросы</span>
+      <h2 class="h2">Ответы на&nbsp;популярные вопросы</h2>
+    </div>
+
+    <div class="faq">
+      <details class="acc reveal">
+        <summary>Что&nbsp;такое «Супервеб»?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>«Супервеб» - это&nbsp;интенсив по&nbsp;продвижению и&nbsp;масштабированию товаров на&nbsp;Wildberries.<br>На&nbsp;интенсиве мы&nbsp;работаем с&nbsp;действующими товарами: разбираем внутреннюю рекламу, анализируем показатели карточек, улучшаем воронки и&nbsp;выстраиваем систему продвижения через оцифровку и&nbsp;таблицы.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Чем обновлённый СуперВеб отличается от&nbsp;предыдущих потоков?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>В&nbsp;новом потоке актуализированы таблицы, и&nbsp;стратегии продвижения под текущие реалии, разбираются стратегии продвижения. Добавили оцифровку всего бизнеса в&nbsp;RM-Agent, и&nbsp;вайб-кодинг для&nbsp;селлеров и&nbsp;менеджеров маркетплейсов. По&nbsp;воскресеньям будем проводить разборы от&nbsp;экспертов. Эфиры основной программы будут проходить с&nbsp;Антоном Ланцовым и&nbsp;его&nbsp;командой.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Кто проводит интенсив?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Основную программу интенсива проводит Антон Ланцов и&nbsp;его&nbsp;команда. Также в&nbsp;потоке проходят эфиры с&nbsp;приглашёнными экспертами и&nbsp;представителями топовых сервисов рынка.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Я новичок. Стоит ли&nbsp;мне идти на&nbsp;СуперВеб?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Если вы&nbsp;еще в&nbsp;начале пути и&nbsp;никогда не&nbsp;работали в&nbsp;кабинете селлера, рекомендуем вам&nbsp;пройти интенсив RedMarketTeam.<br>Начните осваивать базовые процессы, а&nbsp;затем присоединяйтесь к&nbsp;СуперВеб.</p>
+          <p>Если вы&nbsp;еще в&nbsp;начале пути и&nbsp;не&nbsp;запускали рекламу, рекомендуем вам&nbsp;интенсив RedMarketTeam.<br>В&nbsp;этом случае мы&nbsp;рекомендуем сначала освоить базовые процессы, а&nbsp;затем присоединяться к&nbsp;СуперВеб, когда появятся товары и&nbsp;реклама.</p>
+          <p>Если же&nbsp;у&nbsp;вас уже&nbsp;есть товары и&nbsp;вы&nbsp;готовы разбираться в&nbsp;цифрах и&nbsp;продвижении - формат вам&nbsp;подойдёт.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>В&nbsp;каком формате проходит интенсив?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Интенсив проходит онлайн, в&nbsp;формате живых эфиров 2–3 раза в&nbsp;неделю продолжительностью 3–4 часа. В&nbsp;рамках потока также пройдет офлайн Выпускной в&nbsp;Москве.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Когда стартует обновлённый СуперВеб?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Новый интенсив - в&nbsp;ноябре 2026 года. Точную дату объявим дополнительно.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Сколько длится интенсив?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Средняя продолжительность интенсива - около 5 недель.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Будут ли&nbsp;записи эфиров?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Да. Все&nbsp;записи сохраняются на&nbsp;платформе GetCourse и&nbsp;доступны участникам после проведения эфиров.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Какой тариф мне выбрать?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p><b>Тариф «Теория»</b><br>Подойдёт тем, кто уже&nbsp;проходил СуперВеб. В&nbsp;тариф не&nbsp;входят эфиры с&nbsp;приглашёнными экспертами, и&nbsp;не&nbsp;все&nbsp;таблицы.</p>
+          <p><b>Тариф «Теория+»</b><br>Базовый тариф, который мы&nbsp;рекомендуем всем участникам. Включает основную программу, эфиры с&nbsp;приглашёнными экспертами и&nbsp;доступ ко всем ключевым таблицам.</p>
+          <p><b>Тариф «Публичный разбор»</b><br>Это&nbsp;тариф «Теория+» с&nbsp;дополнительным публичным разбором от&nbsp;Антона Ланцова.</p>
+          <p><b>Тариф «Бизнес» (селлер+менеджер)</b><br>Включает всё, что&nbsp;есть в&nbsp;«Теория+», а&nbsp;также личный разбор от&nbsp;Антона Ланцова, расширенный набор таблиц, мастермайнды и&nbsp;дополнительные бонусы.</p>
+          <p>Построчное сравнение - в <a href="#compare" class="accent">таблице</a>.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Можно ли&nbsp;оплатить участие в&nbsp;рассрочку или по&nbsp;счёту?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Да. Доступна рассрочка от&nbsp;банков-партнёров (на&nbsp;финальной странице оплаты), а&nbsp;также оплата по&nbsp;счёту для&nbsp;ИП и&nbsp;юридических лиц, напишите нам&nbsp;приложив реквизиты компании и&nbsp;желаемый тариф.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Можно ли&nbsp;забронировать место предоплатой?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Нет. Участие возможно только при&nbsp;полной оплате.</p>
+        </div>
+      </details>
+
+      <details class="acc reveal">
+        <summary>Что&nbsp;происходит после оплаты?<svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="acc__body">
+          <p>Вы&nbsp;мгновенно получаете доступ к&nbsp;платформе GetCourse, в&nbsp;канал-информер и&nbsp;в&nbsp;чат с&nbsp;куратором. Вся дальнейшая информация публикуется в&nbsp;канале-информере.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ФИНАЛЬНЫЙ ПРИЗЫВ ====================== -->
+<section class="section" id="order">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow" style="justify-content:center">Ближайший поток</span>
+      <h2>Новый интенсив в&nbsp;ноябре 2026 года</h2>
+      <p class="lede" style="margin-inline:auto;text-align:center">
+        Количество мест на&nbsp;каждом тарифе ограничено.
+      </p>
+
+      <!-- Отсчёт скрыт, пока в app.js не задан точный день старта -->
+      <div class="count count--lg" data-count hidden style="margin-top:32px">
+        <div class="count__unit"><div class="count__num" data-cd="d"> - </div><div class="count__lbl">дней</div></div>
+        <div class="count__unit"><div class="count__num" data-cd="h"> - </div><div class="count__lbl">часов</div></div>
+        <div class="count__unit"><div class="count__num" data-cd="m"> - </div><div class="count__lbl">минут</div></div>
+        <div class="count__unit"><div class="count__num" data-cd="s"> - </div><div class="count__lbl">секунд</div></div>
+      </div>
+
+      <div class="cta__btns">
+        <a class="btn btn--primary" href="#tiers">Перейти к&nbsp;оформлению</a>
+        <a class="btn btn--ghost" href="mailto:superwebx@mail.ru">Связаться с&nbsp;нами</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ====================== ПОДВАЛ ====================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a class="logo" href="#top">
+          <img class="logo__img" src="assets/img/logo.svg" alt="СуперВеб" width="143" height="46">
+        </a>
+        <p style="max-width:38ch;margin-top:16px">
+          Интенсив по&nbsp;продвижению на&nbsp;маркетплейсах. Новый интенсив в&nbsp;ноябре 2026 года.
+        </p>
+      </div>
+
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="#author">Автор</a></li>
+          <li><a href="#program">Программа</a></li>
+          <li><a href="#tiers">Тарифы</a></li>
+          <li><a href="#compare">Сравнение тарифов</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+          <li><a href="student.html">Проверить сертификат участника</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Документы</h4>
+        <ul>
+          <li><a href="https://superweb.ru/policy" target="_blank" rel="noopener">Политика конфиденциальности</a></li>
+          <li><a href="https://cloud.mail.ru/public/XPp1/XCZAL3xrt" target="_blank" rel="noopener">Договор оферты</a></li>
+          <li><a href="https://superweb.ru/opd" target="_blank" rel="noopener">Согласие на&nbsp;обработку персональных данных</a></li>
+          <li><a href="mailto:superwebx@mail.ru">superwebx@mail.ru</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <div>
+        ИП Ланцов Антон Сергеевич · ИНН 325750000308<br>
+        ОГРНИП 318325600012390
+      </div>
+      <div>© <span id="year">2026</span> СуперВеб. Все права защищены.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================== ЛИПКАЯ ПАНЕЛЬ (МОБИЛЬНЫЕ) ====================== -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta__price">
+    <b>СуперВеб</b>
+    <span>новый интенсив в&nbsp;ноябре 2026</span>
+  </div>
+  <a class="btn btn--primary btn--sm" href="#tiers">Выбрать тариф</a>
+</div>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

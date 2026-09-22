@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка сертификата участника СуперВеб</title>
+<meta name="description" content="Проверка сертификата участника СуперВеба по номеру или нику в Telegram.">
+<meta name="theme-color" content="#0a0a0b">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Проверка сертификата участника СуперВеб">
+<meta property="og:description" content="Проверка сертификата по номеру или нику в Telegram.">
+<meta property="og:locale" content="ru_RU">
+<!-- <meta property="og:image" content="https://superweb.ru/assets/img/og.jpg"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- Ставим класс js до отрисовки: анимации появления включаются только
+     когда JS реально работает. Без него весь контент виден сразу. -->
+<script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="logo" href="index.html" aria-label="СуперВеб - на главную">
+      <img class="logo__img" src="assets/img/logo.svg" alt="СуперВеб" width="118" height="38">
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="index.html#author">Автор</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#tiers">Тарифы</a>
+      <a href="index.html#compare">Сравнение</a>
+      <a href="index.html#cases">Кейсы</a>
+      <a href="index.html#reviews">Отзывы</a>
+      <a href="index.html#faq">Вопросы</a>
+      <a href="student.html" class="is-active">Проверить сертификат участника</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm" href="index.html#tiers">Выбрать тариф</a>
+
+    <button class="burger" id="burger" type="button"
+            aria-label="Меню" aria-expanded="false" aria-controls="drawer">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" hidden>
+  <a href="index.html#author">Автор</a>
+  <a href="index.html#program">Программа</a>
+  <a href="index.html#tiers">Тарифы</a>
+  <a href="index.html#compare">Сравнение тарифов</a>
+  <a href="index.html#cases">Кейсы</a>
+  <a href="index.html#reviews">Отзывы</a>
+  <a href="index.html#conf">Офлайн</a>
+  <a href="index.html#faq">Вопросы</a>
+  <a href="student.html">Проверить сертификат участника</a>
+  <a class="btn btn--primary btn--block" href="index.html#tiers">Выбрать тариф</a>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<section class="section cases-page">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Выпускники</span>
+      <h1 class="h2">Проверка сертификата участника СуперВеб</h1>
+      <p class="lede">
+        Введите <b>номер сертификата</b> или <b>ник в&nbsp;Telegram</b> и&nbsp;нажмите «Искать».
+      </p>
+    </div>
+
+    <form class="lookup" id="lookupForm" autocomplete="off">
+      <label class="vh" for="lookupQ">Номер сертификата или ник в Telegram</label>
+      <input class="lookup__input" id="lookupQ" type="text" name="q" placeholder="Например, 10 или @username" required>
+      <button class="btn btn--primary" type="submit" id="lookupBtn">Искать</button>
+    </form>
+    <p class="lookup__hint" id="lookupHint" hidden></p>
+
+    <div class="lookup__scroll">
+      <table class="lookup__table" id="lookupTable" hidden>
+        <thead>
+          <tr><th>ФИО ученика</th><th>Поток</th><th>Telegram</th><th>Баллы</th><th>Сертификат</th><th>Номер</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="cta">
+      <span class="eyebrow" style="justify-content:center">Ближайший поток</span>
+      <h2>Новый интенсив в&nbsp;ноябре 2026 года</h2>
+      <p class="lede" style="margin-inline:auto;text-align:center">Хотите свой сертификат СуперВеба? Выберите тариф или задайте вопрос.</p>
+      <div class="cta__btns">
+        <a class="btn btn--primary" href="index.html#tiers">Выбрать тариф</a>
+        <a class="btn btn--ghost" href="index.html#ask">Задать вопрос</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a class="logo" href="index.html">
+          <img class="logo__img" src="assets/img/logo.svg" alt="СуперВеб" width="143" height="46">
+        </a>
+        <p style="max-width:38ch;margin-top:16px">
+          Интенсив по&nbsp;продвижению на&nbsp;маркетплейсах. Новый интенсив в&nbsp;ноябре 2026 года.
+        </p>
+      </div>
+
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="index.html#author">Автор</a></li>
+          <li><a href="index.html#program">Программа</a></li>
+          <li><a href="index.html#tiers">Тарифы</a></li>
+          <li><a href="index.html#compare">Сравнение тарифов</a></li>
+          <li><a href="index.html#faq">Вопросы</a></li>
+          <li><a href="student.html">Проверить сертификат участника</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Документы</h4>
+        <ul>
+          <li><a href="https://superweb.ru/policy" target="_blank" rel="noopener">Политика конфиденциальности</a></li>
+          <li><a href="https://cloud.mail.ru/public/XPp1/XCZAL3xrt" target="_blank" rel="noopener">Договор оферты</a></li>
+          <li><a href="https://superweb.ru/opd" target="_blank" rel="noopener">Согласие на&nbsp;обработку персональных данных</a></li>
+          <li><a href="mailto:superwebx@mail.ru">superwebx@mail.ru</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <div>
+        ИП Ланцов Антон Сергеевич · ИНН 325750000308<br>
+        ОГРНИП 318325600012390
+      </div>
+      <div>© <span id="year">2026</span> СуперВеб. Все права защищены.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
